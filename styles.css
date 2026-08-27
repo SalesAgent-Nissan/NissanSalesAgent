@@ -1,0 +1,637 @@
+/* ============================================
+   NISSAN DEALERSHIP PHILIPPINES – REDESIGNED STYLESHEET
+   Modern, sleek, premium look with Nissan brand colors
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Nissan brand palette */
+    --nissan-red: #C3002F;
+    --nissan-red-light: #e63950;
+    --nissan-red-dark: #9E0026;
+    --nissan-black: #0f0f0f;
+    --nissan-dark-gray: #1e1e1e;
+    --nissan-mid-gray: #3a3a3a;
+    --nissan-light-gray: #f0f2f5;
+    --nissan-white: #ffffff;
+    --nissan-off-white: #fafafa;
+
+    /* Shadows and effects */
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.08);
+    --shadow-md: 0 6px 25px rgba(0,0,0,0.12);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.18);
+    --shadow-red: 0 8px 25px rgba(195,0,47,0.3);
+    --shadow-red-hover: 0 12px 35px rgba(195,0,47,0.45);
+
+    /* Borders */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Typography */
+    --font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--nissan-off-white);
+    color: var(--nissan-black);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Screen-reader-only label ---------- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---------- Honeypot ---------- */
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ========== HEADER ========== */
+.header {
+    background: var(--nissan-black);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 3px solid var(--nissan-red);
+}
+
+.logo-text {
+    color: var(--nissan-white);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding: 15px 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.logo-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--nissan-red);
+    border-radius: 0 0 3px 3px;
+}
+
+.logo-text span {
+    display: block;
+}
+
+.logo-text span:first-child {
+    color: var(--nissan-red);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-top: 2px;
+}
+
+.rep-name {
+    color: #bbb;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: none;
+    margin-top: 4px;
+    font-style: normal;
+}
+
+.contact-number {
+    color: var(--nissan-red-light);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(195,0,47,0.4) 0%, transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(195,0,47,0.3) 0%, transparent 50%),
+        linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 50%, #2d0a10 100%);
+    color: var(--nissan-white);
+    padding: 70px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(195,0,47,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-glow 6s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(195,0,47,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-glow 7s ease-in-out infinite 1.5s;
+}
+
+@keyframes float-glow {
+    0%, 100% { transform: scale(1) translate(0,0); opacity: 0.8; }
+    50% { transform: scale(1.4) translate(30px,-30px); opacity: 0.4; }
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.hero h1 .highlight {
+    color: var(--nissan-red-light);
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 0 20px rgba(195,0,47,0.7);
+}
+
+.hero h1 .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--nissan-red);
+    border-radius: 5px;
+    opacity: 0.7;
+    animation: underline-pulse 2s ease-in-out infinite;
+}
+
+@keyframes underline-pulse {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(0.8); }
+}
+
+.hero p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* ========== SECTION TITLES ========== */
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--nissan-black);
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+
+.section-title h2 .highlight {
+    color: var(--nissan-red);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2 .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--nissan-red);
+    border-radius: 4px;
+    opacity: 0.6;
+}
+
+.section-title p {
+    color: #777;
+    font-size: 14px;
+    max-width: 420px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* ========== FORM SECTION ========== */
+.form-section {
+    padding: 60px 20px 70px;
+    background: var(--nissan-off-white);
+    position: relative;
+}
+
+.form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--nissan-red), transparent);
+}
+
+.form-container {
+    max-width: 560px;
+    margin: 0 auto;
+    background: var(--nissan-white);
+    border-radius: var(--radius-xl);
+    padding: 35px 30px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid #eaeaea;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-base);
+}
+
+.form-container:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-red);
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--nissan-red), #ff5566, var(--nissan-red));
+    background-size: 200% 100%;
+    animation: gradient-shift 3s linear infinite;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--nissan-black);
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+    transition: color var(--transition-fast);
+}
+
+.form-group:focus-within label {
+    color: var(--nissan-red);
+}
+
+.form-group label .required {
+    color: var(--nissan-red);
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    transition: all var(--transition-base);
+    background: var(--nissan-white);
+    color: var(--nissan-black);
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    background-color: #fdfdfd;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #c0c0c0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--nissan-red);
+    box-shadow: 0 0 0 4px rgba(195,0,47,0.12);
+    background-color: var(--nissan-white);
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #ff3333;
+    box-shadow: 0 0 0 4px rgba(255,51,51,0.1);
+    animation: shake 0.4s ease;
+    background-color: #fffafa;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-5px); }
+}
+
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath fill='%23555' d='M1 1l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 85px;
+    max-height: 160px;
+}
+
+.error-msg {
+    display: none;
+    color: #ff3333;
+    font-size: 11px;
+    margin-top: 5px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.error-msg.show {
+    display: block;
+    animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+/* ---------- Submit Button ---------- */
+.submit-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--nissan-red) 0%, var(--nissan-red-dark) 100%);
+    color: var(--nissan-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(195,0,47,0.3);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover,
+.submit-btn:active {
+    background: linear-gradient(135deg, var(--nissan-red-dark) 0%, #7a001d 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-red-hover);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-red);
+    transition-duration: 0.1s;
+}
+
+.submit-btn.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.submit-btn .btn-text {
+    display: inline;
+    transition: opacity 0.2s;
+}
+
+.submit-btn .spinner {
+    display: none;
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top-color: var(--nissan-white);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+}
+
+.submit-btn.loading .btn-text { display: none; }
+.submit-btn.loading .spinner { display: block; }
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.submit-btn.success {
+    background: #28a745;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+}
+
+.submit-btn.success .btn-text { display: none; }
+.submit-btn.success::after {
+    content: 'Request Sent!';
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: fade-in 0.3s ease;
+}
+
+/* ---------- Success Message ---------- */
+.success-message {
+    display: none;
+    background: #e8f8ed;
+    border: 2px solid #28a745;
+    border-radius: var(--radius-md);
+    padding: 18px;
+    text-align: center;
+    margin-top: 18px;
+    animation: fade-in-up 0.5s ease;
+    box-shadow: 0 4px 15px rgba(40,167,69,0.15);
+}
+
+.success-message.show { display: block; }
+
+.success-message h4 {
+    color: #28a745;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.success-message p {
+    color: #555;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: var(--nissan-black);
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+    border-top: 3px solid var(--nissan-red);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--nissan-red), transparent);
+}
+
+.footer .footer-brand {
+    color: var(--nissan-red-light);
+    font-weight: 700;
+}
+
+.footer strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.footer-note {
+    margin-top: 6px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; }
+    .hero p { font-size: 14px; }
+    .form-container { padding: 25px 18px; border-radius: var(--radius-lg); }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .section-title h2 { font-size: 1.6rem; }
+    .logo-text { font-size: 18px; padding: 12px 15px; }
+    .logo-text span:first-child { font-size: 8px; letter-spacing: 3px; }
+    .rep-name { font-size: 10px; }
+    .contact-number { font-size: 10px; }
+    .submit-btn { padding: 13px 16px; font-size: 14px; }
+}
+
+@media (min-width: 768px) {
+    .hero h1 { font-size: 3.2rem; }
+    .hero p { font-size: 18px; }
+    .form-container { padding: 45px 40px; }
+    .section-title h2 { font-size: 2.2rem; }
+}
+
+@media (min-width: 1024px) {
+    .hero h1 { font-size: 3.8rem; }
+    .hero p { font-size: 19px; }
+}

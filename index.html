@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nissan Valencia Bukidnon | Ferlyn Grace Bayotlang</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Get Your Quote">
+    <meta property="og:description" content="Contact Jerson Cagas for exclusive Nissan deals. Submit your details today.">
+    <meta property="og:image" content="images/Promotional.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content=""> 
+    <meta property="og:type" content="website">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="logo-text">
+            NISSAN
+            <span>PREMIUM DEALERSHIP</span>
+            <span class="rep-name">Ferlyn Grace Bayotlang – Sales Agent</span>
+            <span class="contact-number">+63967 943 2080</span>
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <h1>Drive Home Your <span class="highlight">Dream Nissan</span> Today</h1>
+        <p>
+            Get exclusive dealer pricing, flexible financing options, and a seamless
+            buying experience. Submit your details and our team will contact you
+            within 24 hours.
+        </p>
+    </section>
+
+    <!-- ========== FORM SECTION ========== -->
+    <section class="form-section" id="inquiry-form">
+        <div class="section-title">
+            <h2>Get Your <span class="highlight">Personalized Quote</span></h2>
+            <p>Fill in your details and we'll get back to you fast</p>
+        </div>
+
+        <div class="form-container">
+            <form id="carInquiryForm"
+                  action="https://formsubmit.co/jsc.nissancdo@gmail.com"
+                  method="POST"
+                  novalidate>
+
+                <!-- Honeypot field – hidden from real users, bots may fill it -->
+                <label for="honey" class="sr-only">Leave this field blank</label>
+                <input type="text" id="honey" name="_honey" class="honeypot" placeholder=" " tabindex="-1" autocomplete="off">
+
+                <!-- Hidden fields for FormSubmit configuration -->
+                <input type="hidden" name="_subject" value="New Nissan Car Inquiry - Website Submission">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="Full Name" placeholder="Juan Dela Cruz" required autocomplete="name">
+                        <span class="error-msg" id="nameError">Please enter your full name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="Phone Number" placeholder="+63 912 345 6789" required autocomplete="tel">
+                        <span class="error-msg" id="phoneError">Please enter a valid Philippine phone number (10 digits)</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="Email Address" placeholder="juan@example.com" required autocomplete="email">
+                    <span class="error-msg" id="emailError">Please enter a valid email address</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactTime">Preferred Contact Time</label>
+                    <select id="contactTime" name="Preferred Contact Time">
+                        <option value="Anytime">Anytime</option>
+                        <option value="Morning (9am-12pm)">Morning (9am-12pm)</option>
+                        <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
+                        <option value="Evening (5pm-8pm)">Evening (5pm-8pm)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Your Address</label>
+                    <input type="text" id="address" name="Address" placeholder="City, Province" autocomplete="street-address">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Notes / Questions</label>
+                    <textarea id="message" name="Message" placeholder="e.g., I'm interested in a blue Rogue with leather seats..." maxlength="500"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Request My Quote</span>
+                    <span class="spinner"></span>
+                </button>
+
+                <div class="success-message" id="successMessage">
+                    <h4>Request Submitted Successfully!</h4>
+                    <p>Jerson Cagas will contact you within 24 hours. Thank you for choosing Nissan!</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <p>© 2025 <span class="footer-brand">Nissan Valencia Bukidnon</span> | Represented by <strong>Ferlyn Grace Bayotlang</strong></p>
+        <p class="footer-note">Contact: +63967 943 2080 | *Terms and conditions apply.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
